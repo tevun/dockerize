@@ -8,7 +8,7 @@ T_LOCAL=${T_BASE}/.local
 T_SSH=$HOME/.ssh
 T_COMPOSER=${T_BASE}/.composer
 
-T_DIR=$(dirname $(readlink -f ${0}))
+T_DIR=$HOME/.config/tevun
 T_CURRENT=$(basename ${T_DIR})
 
 mkdir -p ${T_CONFIG}
