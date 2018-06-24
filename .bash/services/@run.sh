@@ -8,11 +8,15 @@ function __run()
       docker exec -it ${CONTAINER_NAME} ${@}
       return
     fi
-    echo "# docker:global ~> ${@}"$'\n'"#"
+    echo "# docker:global ~> ${@}"$'\n'"# [${T_DIR}:${T_CHARGER_VOLUME_ROOT}]"
+    PORT=""
+    if [[ "${T_CHARGER_PORT_HOST}" ]];then
+      PORT="-p ${T_CHARGER_PORT_HOST}:${T_CHARGER_PORT_CONTAINER}"
+    fi
     docker run -it --rm \
       -w ${T_CHARGER_VOLUME_ROOT} \
       -u "$(id -u)" \
-      -p ${T_CHARGER_PORT_HOST}:${T_CHARGER_PORT_CONTAINER} \
+      ${PORT} \
       -v ${T_DIR}:${T_CHARGER_VOLUME_ROOT} \
       -v ${T_COMPOSER}:${T_CHARGER_USER_HOME}/.composer \
       -v ${T_CONFIG}:${T_CHARGER_USER_HOME}/.config \

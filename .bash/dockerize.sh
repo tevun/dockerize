@@ -19,16 +19,12 @@ mkdir -p ${T_COMPOSER}
 source ${T_DIR}/.bash/conf/@variables.conf
 source ${T_DIR}/.bash/conf/@images.conf
 
-source ${T_DIR}/.bash/services/run.sh
+source ${T_DIR}/.bash/services/@run.sh
 
 source ${T_DIR}/.bash/services/php.sh
-alias php='__php'
 
 source ${T_DIR}/.bash/services/composer.sh
-alias composer='__composer'
 
 source ${T_DIR}/.bash/services/vue.sh
-alias vue='__vue'
 
 source ${T_DIR}/.bash/services/quasar.sh
-alias quasar='__quasar'

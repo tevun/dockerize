@@ -79,3 +79,8 @@ Você pode personalizar as principais configurações do projeto. Vá até a pas
 ```
 $ cd ~/.config/tevun/.bash/conf
 ```
+
+## Problemas comuns
+
+- Address already in use
+> docker: Error response from daemon: driver failed programming external connectivity on endpoint * (*): Error starting userland proxy: listen tcp 0.0.0.0:*: bind: address already in use.

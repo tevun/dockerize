@@ -11,3 +11,5 @@ ln -s ${T_DIR} ${T_CONFIG}
 if [[ -f ${T_CONFIG}/.bashrc ]];then
   echo $'\n'"source ${T_CONFIG}/.bashrc" >> ~/.bashrc
 fi
+
+echo "Configuração realizada com sucesso. Abra uma nova janela do terminal e explore os novos serviços"
