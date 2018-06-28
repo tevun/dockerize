@@ -1,3 +1,3 @@
 /.idea
-/.config/conf/images.conf
-/.config/conf/variables.conf
+/.config/environment/images.ini
+/.config/environment/variables.ini

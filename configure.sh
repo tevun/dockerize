@@ -13,7 +13,7 @@ if [[ -f ${T_CONFIG}/.bashrc ]];then
 fi
 
 T_CONF=${T_DIR}/.config/conf
-cp ${T_CONF}/images.conf.sample ${T_CONF}/images.conf
-cp ${T_CONF}/variables.conf.sample ${T_CONF}/variables.conf
+cp ${T_CONF}/images.ini.sample ${T_CONF}/images.ini
+cp ${T_CONF}/variables.ini.sample ${T_CONF}/variables.ini
 
 echo "Configuração realizada com sucesso. Abra uma nova janela do terminal e explore os novos serviços"
