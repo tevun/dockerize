@@ -19,7 +19,7 @@ mkdir -p ${T_COMPOSER}
 source ${T_DIR}/.bash/conf/@variables.conf
 source ${T_DIR}/.bash/conf/@images.conf
 
-source ${T_DIR}/.bash/services/@run.sh
+source ${T_DIR}/.bash/bin/run.sh
 
 source ${T_DIR}/.bash/services/php.sh
 
