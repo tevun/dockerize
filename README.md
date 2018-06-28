@@ -83,5 +83,8 @@ $ cd ~/.config/tevun/.config/environment
 
 ## Problemas comuns
 
-- Address already in use
+### Address already in use
 > docker: Error response from daemon: driver failed programming external connectivity on endpoint * (*): Error starting userland proxy: listen tcp 0.0.0.0:*: bind: address already in use.
+
+#### Solução
+Utilize as orientações da seção [Personalizando](#personalizando) e configure as portas no arquivo `images.ini` de acordo com sua utilização de portas.
