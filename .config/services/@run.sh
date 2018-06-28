@@ -4,11 +4,11 @@ function __run()
 {
     CONTAINER_NAME=${T_CURRENT}-${T_CHARGER_SERVICE}
     if [ "$(docker ps -q -f name=${CONTAINER_NAME})" ]; then
-      echo "# docker:${CONTAINER_NAME} ~> ${@}"$'\n'"#"
+      echo "# docker: [l] ${CONTAINER_NAME} ~> ${@}"$'\n'"# local"
       docker exec -it ${CONTAINER_NAME} ${@}
       return
     fi
-    echo "# docker:global ~> ${@}"$'\n'"# [${T_DIR}:${T_CHARGER_VOLUME_ROOT}]"
+    echo "# docker: ${CONTAINER_NAME} ~> ${@}"$'\n'"# global"
     PORT=""
     if [[ "${T_CHARGER_PORT_HOST}" ]];then
       PORT="-p ${T_CHARGER_PORT_HOST}:${T_CHARGER_PORT_CONTAINER}"
