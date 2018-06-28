@@ -75,9 +75,10 @@ Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
 
 ## Personalizando
 
-Você pode personalizar as principais configurações do projeto. Vá até a pasta de environment e avalie os parâmetros que estão definidos por lá.
+Você pode personalizar as principais configurações do projeto.
+Vá até a pasta de environment e avalie os parâmetros que estão definidos por lá.
 ```
-$ cd ~/.config/tevun/.bash/conf
+$ cd ~/.config/tevun/.config/environment
 ```
 
 ## Problemas comuns

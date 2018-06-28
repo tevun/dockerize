@@ -1,15 +1,27 @@
+# the reference of image to `php` service
 PHP_IMAGE="ambientum/php:7.2"
+# use empty to ignore bind
 PHP_PORT_HOST=
+# use empty to ignore bind
 PHP_PORT_CONTAINER=
 
+# the reference of image to `composer` service
 COMPOSER_IMAGE="ambientum/php:7.2"
+# use empty to ignore bind
 COMPOSER_PORT_HOST=
+# use empty to ignore bind
 COMPOSER_PORT_CONTAINER=
 
+# the reference of image to `vue` service
 VUE_IMAGE="lyseontech/vue"
+# use empty to ignore bind
 VUE_PORT_HOST=
+# use empty to ignore bind
 VUE_PORT_CONTAINER=
 
+# the reference of image to `quasar` service
 QUASAR_IMAGE="lyseontech/quasar"
+# use empty to ignore bind
 QUASAR_PORT_HOST=8080
+# use empty to ignore bind
 QUASAR_PORT_CONTAINER=8080
