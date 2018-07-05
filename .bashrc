@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 T_DIR=$HOME/.config/tevun
-T_CONFIG=${T_DIR}/.config
+T_CONFIG=${T_DIR}/dockerize
 
 if [[ -f ${T_CONFIG}/dc.sh ]];then
   source ${T_CONFIG}/dc.sh

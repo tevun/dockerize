@@ -16,15 +16,14 @@ mkdir -p ${T_CACHE}
 mkdir -p ${T_LOCAL}
 mkdir -p ${T_COMPOSER}
 
-source ${T_DIR}/.bash/conf/@variables.conf
-source ${T_DIR}/.bash/conf/@images.conf
+T_DOCKERIZE=${T_DIR}/dockerize
 
-source ${T_DIR}/.bash/bin/run.sh
+source ${T_DOCKERIZE}/environment/images.ini
+source ${T_DOCKERIZE}/environment/variables.ini
 
-source ${T_DIR}/.bash/services/php.sh
+source ${T_DOCKERIZE}/bin/run.sh
 
-source ${T_DIR}/.bash/services/composer.sh
-
-source ${T_DIR}/.bash/services/vue.sh
-
-source ${T_DIR}/.bash/services/quasar.sh
+source ${T_DOCKERIZE}/services/php.sh
+source ${T_DOCKERIZE}/services/composer.sh
+source ${T_DOCKERIZE}/services/vue.sh
+source ${T_DOCKERIZE}/services/quasar.sh
