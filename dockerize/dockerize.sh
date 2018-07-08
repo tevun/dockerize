@@ -18,14 +18,12 @@ mkdir -p ${T_COMPOSER}
 
 T_DOCKERIZE=${T_DIR}/dockerize
 
-cd ${T_DOCKERIZE}
+source ${T_DOCKERIZE}/environment/images.ini
+source ${T_DOCKERIZE}/environment/variables.ini
 
-source ./environment/images.ini
-source ./environment/variables.ini
+source ${T_DOCKERIZE}/bin/run.sh
 
-source ./bin/run.sh
-
-source ./services/php.sh
-source ./services/composer.sh
-source ./services/vue.sh
-source ./services/quasar.sh
+source ${T_DOCKERIZE}/services/php.sh
+source ${T_DOCKERIZE}/services/composer.sh
+source ${T_DOCKERIZE}/services/vue.sh
+source ${T_DOCKERIZE}/services/quasar.sh
