@@ -23,7 +23,7 @@ source ${T_DOCKERIZE}/environment/variables.ini
 
 source ${T_DOCKERIZE}/bin/run.sh
 
-source ${T_DOCKERIZE}/services/php.sh
-source ${T_DOCKERIZE}/services/composer.sh
-source ${T_DOCKERIZE}/services/vue.sh
-source ${T_DOCKERIZE}/services/quasar.sh
+source ${T_DOCKERIZE}/commands/php.sh
+source ${T_DOCKERIZE}/commands/composer.sh
+source ${T_DOCKERIZE}/commands/vue.sh
+source ${T_DOCKERIZE}/commands/quasar.sh
