@@ -21,6 +21,7 @@ Usando ele você irá abstrair todos os serviços que usa para desenvolver para 
 
 Faça download do zip desse projeto
 ```bash
+ $ cd ~
  $ wget -O dockerize.zip https://codeload.github.com/tevun/dockerize/zip/master
 ```
 
@@ -31,7 +32,8 @@ $ unzip dockerize.zip -d tevun
 
 Execute o script de configuração
 ```bash
-$ cd tevun/dockerize-master/ && ./configure.sh
+$ cd tevun/dockerize-master
+$ ./configure.sh
 ```
 
 ## Como usar
