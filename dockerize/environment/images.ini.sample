@@ -27,7 +27,7 @@ VUE_PORT_HOST=8000
 VUE_PORT_CONTAINER=8000
 
 # the reference of image to `quasar` service
-QUASAR_IMAGE="lyseontech/quasar:v0.16.4.1"
+QUASAR_IMAGE="lyseontech/quasar:v0.16.4"
 # use empty to ignore bind
 QUASAR_PORT_HOST=8080
 # use empty to ignore bind
