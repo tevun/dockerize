@@ -35,6 +35,6 @@ green=`tput setaf 2`
 yellow=`tput setaf 3`
 reset=`tput sgr0`
 
-source ${T_DOCKERIZE}/bin/run.sh
+source ${T_DOCKERIZE}/dockerize-run.sh
 
-for file in ${T_DOCKERIZE}/commands/*; do source ${file}; done
+for file in ${T_DOCKERIZE}/bin/*.sh; do source ${file}; done

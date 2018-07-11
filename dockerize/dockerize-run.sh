@@ -4,11 +4,15 @@ function __run()
 {
     CONTAINER_NAME=${T_CURRENT}-${T_DOCKERIZE_SERVICE}
     if [[ $(docker ps -q -f name=${CONTAINER_NAME}) ]]; then
-      echo "${yellow}# ${T_DOCKERIZE_IMAGE}/${CONTAINER_NAME}: local ~> ${@}${reset}"
+      if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
+        echo "${yellow}# ${T_DOCKERIZE_IMAGE}/${CONTAINER_NAME}: local ~> ${@}${reset}"
+      fi
       docker exec -it ${CONTAINER_NAME} ${@}
       return
     fi
-    echo "${yellow}# ${T_DOCKERIZE_IMAGE}: global ~> ${@} ${reset}"
+    if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
+      echo "${yellow}# ${T_DOCKERIZE_IMAGE}: global ~> ${@} ${reset}"
+    fi
     PORT=""
     if [[ ${T_DOCKERIZE_PORT_HOST} && ${T_DOCKERIZE_PORT_CONTAINER} ]];then
       PORT="-p ${T_DOCKERIZE_PORT_HOST}:${T_DOCKERIZE_PORT_CONTAINER}"

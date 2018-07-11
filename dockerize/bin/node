@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR_NAME=$(dirname $(dirname $(readlink -f ${0})))
+source ${DIR_NAME}/dockerize.sh
+
+node ${@}

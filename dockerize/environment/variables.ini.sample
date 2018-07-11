@@ -10,3 +10,5 @@ T_DOCKERIZE_USER_HOME="/home/application"
 T_DOCKERIZE_PORT_HOST=3100
 # default port to bind in container
 T_DOCKERIZE_PORT_CONTAINER=3100
+# determine if debug will show commands executed
+T_DOCKERIZE_DEBUG=true
