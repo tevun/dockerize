@@ -17,6 +17,7 @@ mkdir -p ${T_LOCAL}
 mkdir -p ${T_COMPOSER}
 
 T_DOCKERIZE=${T_DIR}/dockerize
+T_DOCKERIZE_BIN=""
 
 source ${T_DOCKERIZE}/environment/images.ini
 source ${T_DOCKERIZE}/environment/variables.ini
