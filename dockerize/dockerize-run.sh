@@ -44,14 +44,10 @@ function __run()
 function __env
 {
     DOCKERIZE_ENV=$(dirname $(readlink -f ${0}))
-
     if [[ ! -f ${DOCKERIZE_ENV}/.dockerize ]]; then
       return
     fi
-
     source ${DOCKERIZE_ENV}/.dockerize
-
     DOCKERIZE_BIN="DOCKERIZE_${T_DOCKERIZE_BIN}"
-
     CONTAINER_NAME=${!DOCKERIZE_BIN}
 }
