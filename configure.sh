@@ -12,7 +12,7 @@ if [[ -f ${T_CONFIG}/.bashrc ]];then
   echo $'\n'"source ${T_CONFIG}/.bashrc" >> ~/.bashrc
 fi
 
-T_CONF=${T_DIR}/.config/conf
+T_CONF=${T_DIR}/dockerize/environment
 cp ${T_CONF}/images.ini.sample ${T_CONF}/images.ini
 cp ${T_CONF}/variables.ini.sample ${T_CONF}/variables.ini
 

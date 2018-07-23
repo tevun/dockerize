@@ -19,18 +19,40 @@ Usando ele você irá abstrair todos os serviços que usa para desenvolver para 
 
 > Leia os passos antes de executá-los para entender o que está sendo feito
 
-Faça download do zip desse projeto
+### Fork
+
+Posicione seu terminal numa pasta fácil de achar
 ```bash
  $ cd ~
- $ wget -O dockerize.zip https://codeload.github.com/tevun/dockerize/zip/master
 ```
 
-Descompacte o conteúdo do zip
+Faça um clone do projeto localmente
+```bash
+$ mkdir tevun
+$ cd tevun
+$ git clone git@github.com:tevun/dockerize.git dockerize-master
+```
+
+<p align="center">
+  OU
+</p>
+
+### Download
+
+Faça download do zip desse projeto
+```bash
+ $ wget -O dockerize.zip https://codeload.github.com/tevun/dockerize/zip/master
+```
+& descompacte o conteúdo do zip
 ```bash
 $ unzip dockerize.zip -d tevun
 ```
 
-Execute o script de configuração
+### Configuração
+
+Se estiver usando o projeto pela primeira vez pode usar nosso conveniente script de configuração para adicionar os documentos locais ao ambiente do seu terminal.
+
+Para isso execute o script de configuração
 ```bash
 $ cd tevun/dockerize-master
 $ ./configure.sh
@@ -80,7 +102,7 @@ Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
 Você pode personalizar as principais configurações do projeto.
 Vá até a pasta de environment e avalie os parâmetros que estão definidos por lá.
 ```
-$ cd ~/.config/tevun/.config/environment
+$ cd ~/.config/tevun/dockerize/environment
 ```
 
 ## Problemas comuns
