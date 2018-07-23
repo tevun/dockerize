@@ -12,9 +12,17 @@ function php()
     T_DOCKERIZE_PORT_HOST=${PHP_PORT_HOST}
     T_DOCKERIZE_PORT_CONTAINER=${PHP_PORT_CONTAINER}
     if [ "${1}" == "serve" ]; then
-      T_DOCKERIZE_PORT_HOST=${2}
-      T_DOCKERIZE_PORT_CONTAINER=${2}
-      __run "php -S 0.0.0.0:${T_DOCKERIZE_PORT_CONTAINER} -t ${T_DOCKERIZE_VOLUME_ROOT}"
+      PHP_PORT="80"
+      if [ "${2}" ]; then
+        PHP_PORT=${2}
+      fi
+      T_DOCKERIZE_PORT_HOST=${PHP_PORT}
+      T_DOCKERIZE_PORT_CONTAINER=${PHP_PORT}
+      PHP_PARAMETERS="-t ${T_DOCKERIZE_VOLUME_ROOT}"
+      if [ "${3}" ]; then
+        PHP_PARAMETERS=${3}
+      fi
+      __run "php -S 0.0.0.0:${T_DOCKERIZE_PORT_CONTAINER} ${PHP_PARAMETERS}"
       return
     fi
     __run "php ${@}"

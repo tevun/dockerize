@@ -10,5 +10,9 @@ function quasar()
     T_DOCKERIZE_IMAGE=${QUASAR_IMAGE}
     T_DOCKERIZE_PORT_HOST=${QUASAR_PORT_HOST}
     T_DOCKERIZE_PORT_CONTAINER=${QUASAR_PORT_CONTAINER}
+    if [[ ${@} = "build" ]];then
+      T_DOCKERIZE_PORT_HOST=""
+      T_DOCKERIZE_PORT_CONTAINER=""
+    fi
     __run "quasar ${@}"
 }
