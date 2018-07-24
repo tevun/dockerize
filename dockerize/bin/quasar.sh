@@ -16,3 +16,18 @@ function quasar()
     fi
     __run "quasar ${@}"
 }
+
+function __quasar
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts="init dev build clean new mode info serve help -v"
+    if [[ ${cur} == * ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        return 0
+    fi
+}
+
+complete -F __quasar quasar
