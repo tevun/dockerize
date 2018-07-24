@@ -12,6 +12,13 @@ COMPOSER_PORT_HOST=
 # use empty to ignore bind
 COMPOSER_PORT_CONTAINER=
 
+# the reference of image to `artisan` service
+ARTISAN_IMAGE="lyseontech/php-apache-dev:v7.0"
+# use empty to ignore bind
+ARTISAN_PORT_HOST=
+# use empty to ignore bind
+ARTISAN_PORT_CONTAINER=
+
 # the reference of image to `node` service
 NODE_IMAGE="lyseontech/node:v10.6.0"
 # use empty to ignore bind
