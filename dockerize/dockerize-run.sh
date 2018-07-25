@@ -4,21 +4,29 @@ function __run()
 {
     __env
 
+    COMMAND=${@}
+    if [[ ${COMMAND} = *"bash"* ]];then
+      T_DOCKERIZE_PORT_HOST=""
+      T_DOCKERIZE_PORT_CONTAINER=""
+      COMMAND="bash"
+    fi
+
     if [[ ! ${CONTAINER_NAME} ]]; then
       CONTAINER_NAME=${T_CURRENT}-${T_DOCKERIZE_SERVICE}
     fi
 
     if [[ $(docker ps -q -f name=${CONTAINER_NAME}) ]]; then
       if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
-        echo "${green}# ${CONTAINER_NAME}@${T_DOCKERIZE_IMAGE}: local ~> ${@}${reset}"
+        T_DOCKERIZE_IMAGE=$(docker ps -f name=${CONTAINER_NAME} --format "{{.Image}}")
+        echo "${green}# ${CONTAINER_NAME}@${T_DOCKERIZE_IMAGE} [local] ~> ${@}${reset}"
       fi
 
-      docker exec -it ${CONTAINER_NAME} ${@}
+      docker exec -it ${CONTAINER_NAME} ${COMMAND}
       return
     fi
 
     if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
-      echo "${yellow}# ${T_DOCKERIZE_IMAGE}: global ~> ${@} ${reset}"
+      echo "${yellow}# ${T_DOCKERIZE_IMAGE} [global] ~> ${@} ${reset}"
     fi
 
     PORT=""
@@ -38,7 +46,7 @@ function __run()
       -v ${T_CACHE}:${T_DOCKERIZE_USER_HOME}/.cache \
       -v ${T_LOCAL}:${T_DOCKERIZE_USER_HOME}/.local \
       -v ${T_SSH}:${T_DOCKERIZE_USER_HOME}/.ssh \
-      ${T_DOCKERIZE_IMAGE} ${@}
+      ${T_DOCKERIZE_IMAGE} ${COMMAND}
 }
 
 function __env
