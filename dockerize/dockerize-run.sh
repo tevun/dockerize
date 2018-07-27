@@ -22,6 +22,7 @@ function __run()
       fi
 
       docker exec -it ${CONTAINER_NAME} ${COMMAND}
+      CONTAINER_NAME=""
       return
     fi
 
