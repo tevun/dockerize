@@ -11,5 +11,5 @@ function artisan()
     T_DOCKERIZE_SERVICE="app"
     T_DOCKERIZE_PORT_HOST=${ARTISAN_PORT_HOST}
     T_DOCKERIZE_PORT_CONTAINER=${ARTISAN_PORT_CONTAINER}
-    __run "composer ${@}"
+    __run "php artisan ${@}"
 }
