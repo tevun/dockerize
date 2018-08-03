@@ -3,13 +3,19 @@
 T_DIR=$(dirname $(readlink -f ${0}))
 T_CONFIG=$HOME/.config/tevun
 
+if [[ ! -d $HOME/.config ]]; then
+  mkdir -p $HOME/.config
+fi
+
 if [[ -h ${T_CONFIG} ]]; then
   rm ${T_CONFIG}
 fi
+
 ln -s ${T_DIR} ${T_CONFIG}
 
+SOURCE="source ${T_CONFIG}/.bashrc"
 if [[ -f ${T_CONFIG}/.bashrc ]];then
-  echo $'\n'"source ${T_CONFIG}/.bashrc" >> ~/.bashrc
+  echo $'\n'"${SOURCE}" >> ~/.bashrc
 fi
 
 T_CONF=${T_DIR}/dockerize/environment
