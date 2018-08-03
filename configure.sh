@@ -14,7 +14,7 @@ fi
 ln -s ${T_DIR} ${T_CONFIG}
 
 SOURCE="source ${T_CONFIG}/.bashrc"
-if [[ -f ${T_CONFIG}/.bashrc ]];then
+if [[ -f ~/.bashrc && -f ${T_CONFIG}/.bashrc && ! "$(grep -q ${SOURCE} ~/.bashrc)" ]];then
   echo $'\n'"${SOURCE}" >> ~/.bashrc
 fi
 
