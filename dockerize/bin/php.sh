@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function php()
+function php
 {
     T_0=${0//-}
     T_DIR=$(dirname $(readlink -f ${T_0}))

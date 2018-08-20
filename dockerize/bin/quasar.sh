@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function quasar()
+function quasar
 {
     T_0=${0//-}
     T_DIR=$(dirname $(readlink -f ${T_0}))
