@@ -52,7 +52,8 @@ function __run()
 
 function __env
 {
-    DOCKERIZE_ENV=$(dirname $(readlink -f ${0}))
+    T_0=${0//-}
+    DOCKERIZE_ENV=$(dirname $(readlink -f ${T_0}))
     if [[ ! -f ${DOCKERIZE_ENV}/.dockerize ]]; then
       return
     fi

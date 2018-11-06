@@ -2,8 +2,9 @@
 
 function php()
 {
-    T_DIR=$(dirname $(readlink -f ${0}))
-    T_CURRENT=$(basename $(dirname $(readlink -f ${0})))
+    T_0=${0//-}
+    T_DIR=$(dirname $(readlink -f ${T_0}))
+    T_CURRENT=$(basename $(dirname $(readlink -f ${T_0})))
 
     T_DOCKERIZE_BIN="PHP"
 
