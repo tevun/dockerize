@@ -11,13 +11,24 @@ function __run()
       COMMAND="bash"
     fi
 
+    # $(echo "npm run dev 3010::3020" | grep -P '(\d+::\d+)' -o) => 3010:3020
+    PORTS=$(echo ${COMMAND} | grep -P '(\d+::\d+)' -o)
+    if [[ ${PORTS} ]];then
+      # $(echo "3010::3020" | sed -e 's/::\([0-9]\+\)//g') => 3010
+      T_DOCKERIZE_PORT_HOST=$(echo ${PORTS} | sed -e 's/::\([0-9]\+\)//g')
+      # $(echo "3010::3020" | sed -e 's/\([0-9]\+\):://g') => 3020
+      T_DOCKERIZE_PORT_CONTAINER=$(echo ${PORTS} | sed -e 's/\([0-9]\+\):://g')
+      # echo $(echo "npm run dev 3010::3020" | sed -e 's/\([0-9]\+\)::\([0-9]\+\)//g') => npm run dev
+      COMMAND=$(echo ${COMMAND} | sed -e 's/\([0-9]\+\)::\([0-9]\+\)//g')
+    fi
+
     if [[ ! ${CONTAINER_NAME} ]]; then
       CONTAINER_NAME=${T_CURRENT}-${T_DOCKERIZE_SERVICE}
     fi
 
     if [[ $(docker ps -q -f name=${CONTAINER_NAME}) ]]; then
       if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
-        T_DOCKERIZE_IMAGE=$(docker ps -f name=${CONTAINER_NAME} --format "{{.Image}}")
+        T_DOCKERIZE_IMAGE=$(docker ps -f name="${CONTAINER_NAME}$" --format "{{.Image}}")
         echo "${green}# ${CONTAINER_NAME}@${T_DOCKERIZE_IMAGE} [local] ~> ${@}${reset}"
       fi
 
@@ -26,6 +37,7 @@ function __run()
       return
     fi
 
+    CONTAINER_NAME=""
     if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
       echo "${yellow}# ${T_DOCKERIZE_IMAGE} [global] ~> ${@} ${reset}"
     fi
