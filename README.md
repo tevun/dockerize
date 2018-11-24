@@ -63,10 +63,15 @@ $ ./configure.sh
 O Dockerize criará um mecanismo de comandos para alternar comandos de serviços para rodar em imagens globais e/ou imagens relativas ao projeto da pasta em que está.
 
 Atualmente temos os seguintes serviços configurados:
- - php
+ - artisan
  - composer
- - vue
+ - node
+ - npm
+ - php
+ - phpunit
  - quasar
+ - vue
+ - yarn
 
  Então você poderá simplesmente executar:
 ```bash
