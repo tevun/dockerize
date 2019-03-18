@@ -39,3 +39,10 @@ QUASAR_IMAGE="lyseontech/quasar:v0.17.0"
 QUASAR_PORT_HOST=8080
 # use empty to ignore bind
 QUASAR_PORT_CONTAINER=8080
+
+# the reference of image to `quasar` service
+REACT_IMAGE="lyseontech/node:v10.6.0"
+# use empty to ignore bind
+REACT_PORT_HOST=3000
+# use empty to ignore bind
+REACT_PORT_CONTAINER=3000
