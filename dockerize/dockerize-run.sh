@@ -2,6 +2,8 @@
 
 function __run()
 {
+    CONTAINER_NAME=""
+    # try capture CONTAINER_NAME from environment
     __env
 
     COMMAND=${@}
@@ -9,6 +11,11 @@ function __run()
       T_DOCKERIZE_PORT_HOST=""
       T_DOCKERIZE_PORT_CONTAINER=""
       COMMAND="bash"
+    fi
+    if [[ ${COMMAND} = *"sh"* ]];then
+      T_DOCKERIZE_PORT_HOST=""
+      T_DOCKERIZE_PORT_CONTAINER=""
+      COMMAND="sh"
     fi
 
     # $(echo "npm run dev 3010::3020" | grep -P '(\d+::\d+)' -o) => 3010:3020
@@ -33,11 +40,9 @@ function __run()
       fi
 
       docker exec -it ${CONTAINER_NAME} ${COMMAND}
-      CONTAINER_NAME=""
       return
     fi
 
-    CONTAINER_NAME=""
     if [[ ! -z ${T_DOCKERIZE_DEBUG} ]]; then
       echo "${yellow}# ${T_DOCKERIZE_IMAGE} [global] ~> ${@} ${reset}"
     fi
