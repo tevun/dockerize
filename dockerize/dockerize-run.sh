@@ -57,7 +57,6 @@ function __run()
       ${PORT} \
       --rm \
       -w ${T_DOCKERIZE_VOLUME_ROOT} \
-      -u "$(id -u)" \
       -v ${T_DIR}:${T_DOCKERIZE_VOLUME_ROOT} \
       -v ${T_COMPOSER}:${T_DOCKERIZE_USER_HOME}/.composer \
       -v ${T_CONFIG}:${T_DOCKERIZE_USER_HOME}/.config \
