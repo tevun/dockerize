@@ -2,9 +2,8 @@
 
 function react
 {
-    T_0=${0//-}
-    T_DIR=$(dirname $(readlink -f ${T_0}))
-    T_CURRENT=$(basename $(dirname $(readlink -f ${T_0})))
+    T_DIR=$(pwd)
+    T_CURRENT=$(basename ${T_DIR})
 
     T_DOCKERIZE_BIN="REACT"
 
