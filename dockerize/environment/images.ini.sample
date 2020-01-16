@@ -1,48 +1,55 @@
 # the reference of image to `php` service
-PHP_IMAGE="lyseontech/php-apache-dev:v7.3"
+PHP_IMAGE="php:7.3"
 # use empty to ignore bind
 PHP_PORT_HOST=
 # use empty to ignore bind
 PHP_PORT_CONTAINER=
 
 # the reference of image to `composer` service
-COMPOSER_IMAGE="lyseontech/php-apache-dev:v7.3"
+COMPOSER_IMAGE="composer:1.8"
 # use empty to ignore bind
 COMPOSER_PORT_HOST=
 # use empty to ignore bind
 COMPOSER_PORT_CONTAINER=
 
 # the reference of image to `artisan` service
-ARTISAN_IMAGE="lyseontech/php-apache-dev:v7.0"
+ARTISAN_IMAGE="php:7.3"
 # use empty to ignore bind
 ARTISAN_PORT_HOST=
 # use empty to ignore bind
 ARTISAN_PORT_CONTAINER=
 
 # the reference of image to `node` service
-NODE_IMAGE="lyseontech/node:v10.6.0"
+NODE_IMAGE="node:10-alpine"
 # use empty to ignore bind
 NODE_PORT_HOST=
 # use empty to ignore bind
 NODE_PORT_CONTAINER=
 
 # the reference of image to `vue` service
-VUE_IMAGE="lyseontech/vue:v3.0.0-rc.5"
+VUE_IMAGE="tevun/vue:latest"
 # use empty to ignore bind
 VUE_PORT_HOST=8000
 # use empty to ignore bind
 VUE_PORT_CONTAINER=8000
 
 # the reference of image to `quasar` service
-QUASAR_IMAGE="lyseontech/quasar:v0.17.0"
+QUASAR_IMAGE="tevun/quasar:latest"
 # use empty to ignore bind
 QUASAR_PORT_HOST=8080
 # use empty to ignore bind
 QUASAR_PORT_CONTAINER=8080
 
 # the reference of image to `quasar` service
-REACT_IMAGE="lyseontech/node:v10.6.0"
+REACT_IMAGE="tevun/node:latest"
 # use empty to ignore bind
 REACT_PORT_HOST=3000
 # use empty to ignore bind
 REACT_PORT_CONTAINER=3000
+
+# the reference of image to `symfony` service
+SYMFONY_IMAGE="composer:1.8"
+# use empty to ignore bind
+SYMFONY_PORT_HOST=
+# use empty to ignore bind
+SYMFONY_PORT_CONTAINER=

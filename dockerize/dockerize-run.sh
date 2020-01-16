@@ -11,8 +11,7 @@ function __run()
       T_DOCKERIZE_PORT_HOST=""
       T_DOCKERIZE_PORT_CONTAINER=""
       COMMAND="bash"
-    fi
-    if [[ ${COMMAND} = *"sh"* ]];then
+    elif [[ ${COMMAND} = *"sh"* ]];then
       T_DOCKERIZE_PORT_HOST=""
       T_DOCKERIZE_PORT_CONTAINER=""
       COMMAND="sh"
@@ -69,12 +68,11 @@ function __run()
 
 function __env
 {
-    T_0=${0//-}
-    DOCKERIZE_ENV=$(dirname $(readlink -f ${T_0}))
-    if [[ ! -f ${DOCKERIZE_ENV}/.dockerize ]]; then
+    DOCKERIZE_ENV_PWD=$(pwd)
+    if [[ ! -f ${DOCKERIZE_ENV_PWD}/.dockerize ]]; then
       return
     fi
-    source ${DOCKERIZE_ENV}/.dockerize
+    source ${DOCKERIZE_ENV_PWD}/.dockerize
     DOCKERIZE_BIN="DOCKERIZE_${T_DOCKERIZE_BIN}"
     CONTAINER_NAME=${!DOCKERIZE_BIN}
 }
